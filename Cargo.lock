@@ -955,8 +955,9 @@ version = "0.1.0"
 dependencies = [
  "lazy_static",
  "rocket",
- "rocket_codegen",
  "rocket_dyn_templates",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]
@@ -1374,6 +1375,7 @@ dependencies = [
  "rocket_codegen",
  "rocket_http",
  "serde",
+ "serde_json",
  "state",
  "tempfile",
  "time",

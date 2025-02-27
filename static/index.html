@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Web App!</h1>
+        <p id="message">Hello, world!</p>
+        <p>Visitor count: <strong id="count"></strong></p>
+    </div>
+    <script>
+        fetch('/count')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('count').textContent = data.count;
+            });
+    </script>
+</body>
+</html>
