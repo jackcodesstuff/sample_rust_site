@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web App</title>
+    <title>Memory Visualizer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Web App!</h1>
-        <p id="message">Hello, world!</p>
-        <p>Visitor count: <strong id="count"></strong></p>
+    <h1>Memory Manager</h1>
+    
+    <div id="status-container">
+        <p id="status">Status: Ready</p>
+        <div id="status-bar"></div>
     </div>
-    <script>
-        fetch('/count')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('count').textContent = data.count;
-            });
-    </script>
+
+    <div id="memory-container"></div>
+
+    <div class="buttons">
+        <button onclick="allocateMemory()">Allocate Memory</button>
+        <button onclick="resetMemory()">Reset Memory</button>
+        <button onclick="freeAllMemory()">Deallocate All</button>
+    </div>
+
+    <div id="details">
+        <h2>Memory Block Details</h2>
+        <p id="details-info">Click a memory block to see details.</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
